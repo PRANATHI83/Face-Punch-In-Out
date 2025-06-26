@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 3000;
+const port = 3080;
 
 // Middleware
 app.use(cors());
@@ -14,9 +14,9 @@ app.use(express.json());
 // PostgreSQL connection configuration
 const pool = new Pool({
     user: 'postgres', // Replace with your PostgreSQL username
-    host: 'localhost',
+    host: 'postgres',
     database: 'FaceReco-Punch', // Replace with your database name
-    password: 'root', // Replace with your PostgreSQL password
+    password: 'admin234', // Replace with your PostgreSQL password
     port: 5432,
 });
 
@@ -240,5 +240,5 @@ app.get('/api/employee-status/:employeeId', async (req, res) => {
 
 // Start server
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running at http://65.2.191.214:${port}`);
 });
